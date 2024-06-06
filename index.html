@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="container h2 text-center border-bottom">
+        Facturación
+    </header>
+    <main class="container">
+        <div class="card">
+            <div class="card-body row">
+                <p><strong>Instrucciones: </strong> Llene todos los campos y presione el boton agregar.</p>
+                <div class="col-auto">
+                    <input type="text" id="description" class="form-control" placeholder="Descripción">
+                </div>
+                <div class="col-auto">
+                    <input type="number" step="0.01" id="quantity" class="form-control" placeholder="Cantidad">
+                </div>
+                <div class="col-auto">
+                    <input type="number" id="price" class="form-control" placeholder="Precio">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary"id="btnAdd">Agregar</button>
+                </div>
+                <div id="messages"></div>
+            </div>
+        </div>
+
+        <div class="card mt-5">
+            <div class="card-header d-flex justify-content-between bg-primary text-white">
+                Detalle <span><strong>Folio: </strong> #2</span>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th width="100px">Cantidad</th>
+                            <th>Descripción</th>
+                            <th width="150px">Precio</th>
+                            <th width="150px">Importe</th>
+                            <th width="30px"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="detalle"></tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th>Subtotal:</th>
+                            <th id="subtotal">0.00</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th>IVA (19%):</th>
+                            <th id="iva">0.00</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th>Total:</th>
+                            <th id="total">0.00</th>
+                            <th></th>
+                        </tr>
+                        <tr id="rowButtons">
+                            <th colspan="2"></th>
+                            <th><button id = btnCancelar class="btn btn-sm btn-danger">Cancelar factura</button></th>
+                            <th><button class="btn btn-sm btn-success">Generar factura</button></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </main>
+    <!-- <script src="app.js"></script> -->
+    <script src="app2.js"></script>
+    <!-- <script src="app3.js"></script> -->
+</body>
+</html>
